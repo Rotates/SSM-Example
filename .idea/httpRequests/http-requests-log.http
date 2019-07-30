@@ -1,0 +1,168 @@
+GET http://localhost:8088//v1.api.21cn.com/savegoodsinfo?goods_name="惠普笔记本电脑 暗影精灵3PRO"&goods_type=101&goods_cost=5999.99&goods_price=6599.99&goods_media="https://www.google.com/"&goods_media_width=1280&goods_media_height=720&goods_description=“金属面板，144HZ电竞屏，512GSSD固态硬盘，7代i5。”&goods_isputaway=true&goods_storage=499&goods_sales_volume=500
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T034057.500.html
+
+###
+
+GET http://localhost:8088/v1.api.21cn.com/savegoodsinfo?goodsName="惠普笔记本电脑 暗影精灵3PRO"&goodsType=101&goodsCost=5999.99&goodsPrice=6599.99&goodsMedia="https://www.google.com/"&goodsMediaWidth=1280&goodsMediaHeight=720&goodsDescription=“金属面板，144HZ电竞屏，512GSSD固态硬盘，7代i5。”&goodsIsPutaway=true&goodsStorage=499&goodsSalesVolume=500
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T025310.400.html
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/savegoodsinfo?goodsName="惠普笔记本电脑 暗影精灵3PRO"&goodsType=101&goodsCost=5999.99&goodsPrice=6599.99&goodsMedia="https://www.google.com/"&goodsMediaWidth=1280&goodsMediaHeight=720&goodsDescription=“金属面板，144HZ电竞屏，512GSSD固态硬盘，7代i5。”&goodsIsPutaway=true&goodsStorage=499&goodsSalesVolume=500
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T122037.400.html
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/savegoodsinfo
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T121042.400.html
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T121028.404.html
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T091651.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T091518.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T085533.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T085419.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-30T085225.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T055034.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T053237.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T044641.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T044629.404.html
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T044557.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T042953.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T040921.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T040904.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T040837.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T040800.200.json
+
+###
+
+GET http://localhost:8088//v1.api.21cn.com/hello
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-07-29T040552.200.json
+
+###
+

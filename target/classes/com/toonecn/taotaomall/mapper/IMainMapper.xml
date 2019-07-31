@@ -63,4 +63,10 @@
                 #{goodsStorage},
                 #{goodsSalesVolume})
     </insert>
+
+    <!-- 获取所有商品的信息 -->
+    <select id="listGoodsInfo" resultType="">
+        SELECT *
+        FROM goods;
+    </select>
 </mapper>

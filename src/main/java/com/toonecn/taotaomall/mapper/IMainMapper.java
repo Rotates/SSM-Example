@@ -4,6 +4,7 @@ import com.toonecn.taotaomall.entity.Goods;
 import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @author yang
@@ -18,4 +19,12 @@ public interface IMainMapper {
 	 * @throws SQLException 添加商品信息失败
 	 */
 	int saveGoodsInfo(Goods goods) throws SQLException;
+
+	/**
+	 * 获取所有商品的信息
+	 *
+	 * @return 所有商品信息list集合
+	 * @throws SQLException 添加商品信息失败
+	 */
+	List<Goods> listGoodsInfo() throws SQLException;
 }

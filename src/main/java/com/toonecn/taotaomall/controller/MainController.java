@@ -5,13 +5,13 @@ import com.toonecn.taotaomall.entity.ResultMap;
 import com.toonecn.taotaomall.service.IMainService;
 import com.toonecn.taotaomall.utils.UUIDUtil;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author yang
@@ -39,9 +39,9 @@ public class MainController {
 	 * @param goodsIsPutaway   是否在架
 	 * @param goodsStorage     库存量
 	 * @param goodsSalesVolume 销售量
-	 * @return 成功添加否
+	 * @return 包含商品添加是否成功信息在内的接口统一返回格式
 	 */
-	@RequestMapping("/savegoods")
+	@RequestMapping(value = "/goods/savegoods", method = RequestMethod.POST)
 	@ResponseBody
 	public ResultMap saveGoodsInfo(@RequestParam(value = "goods_name") String goodsName,
 	                               @RequestParam(value = "goods_type") int goodsType,
@@ -60,31 +60,18 @@ public class MainController {
 				goodsIsPutaway, goodsStorage, goodsSalesVolume);
 
 		System.out.println(goods.toString());
-		Map<String, String> map = new HashMap<>(4);
-		try {
-			// 如果影响记录数大于等于1，即商品信息成功插入数据表
-			if (iMainService.saveGoodsInfo(goods)) {
-				map.put("save_state", "成功添加一条商品信息");
-				return ResultMap.success("请求成功", map);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return ResultMap.failure("1001", "添加失败啦，请稍后再试");
-		}
-		return null;
+		return iMainService.saveGoodsInfo(goods);
 	}
 
 	/**
-	 * 获取某指定ID商品的信息
+	 * 获取所有商品的信息
 	 *
-	 * @param goodsId 商品ID
-	 * @return 匹配的结果
+	 * @return 包含所有商品信息在内的接口统一返回格式
 	 */
-	@RequestMapping("/goods/{goodsId}")
+	@RequestMapping("/goods/all")
 	@ResponseBody
-	public ResultMap getGoodsInfo(@PathVariable String goodsId) {
-
-		return null;
+	public ResultMap listGoodsInfo() {
+		return iMainService.listGoodsInfo();
 	}
 
 }

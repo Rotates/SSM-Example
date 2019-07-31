@@ -64,9 +64,16 @@
                 #{goodsSalesVolume})
     </insert>
 
+    <!-- 更改商品在架状态信息 -->
+    <update id="updateGoodsStateById" parameterType="string">
+        UPDATE goods
+        SET goods_isputaway = TRUE
+        WHERE goods_id = #{goodsId}
+    </update>
+
     <!-- 获取所有商品的信息 -->
-    <select id="listGoodsInfo" resultType="">
+    <select id="listGoodsInfo" resultMap="GoodsMap">
         SELECT *
-        FROM goods;
+        FROM goods
     </select>
 </mapper>

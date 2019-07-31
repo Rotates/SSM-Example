@@ -5,10 +5,7 @@ import com.toonecn.taotaomall.entity.ResultMap;
 import com.toonecn.taotaomall.service.IMainService;
 import com.toonecn.taotaomall.utils.UUIDUtil;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -68,10 +65,21 @@ public class MainController {
 	 *
 	 * @return 包含所有商品信息在内的接口统一返回格式
 	 */
-	@RequestMapping("/goods/all")
+	@RequestMapping(value = "/goods/all", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultMap listGoodsInfo() {
 		return iMainService.listGoodsInfo();
 	}
 
+	/**
+	 * 上架指定商品ID的商品
+	 *
+	 * @param goodsId 商品ID
+	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
+	 */
+	@RequestMapping(value = "/goods/putaway/{goods_id}", method = RequestMethod.PUT)
+	@ResponseBody
+	public ResultMap updateGoodsStateById(@PathVariable("goods_id") String goodsId) {
+		return iMainService.updateGoodsStateById(goodsId);
+	}
 }

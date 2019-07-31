@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /**
  * @author yang
@@ -30,12 +29,10 @@ public class MainServiceImpl implements IMainService {
 	 */
 	@Override
 	public ResultMap saveGoodsInfo(Goods goods) {
-		Map<String, String> map = new HashMap<>(4);
 		// 如果影响记录数大于等于1，即商品信息成功插入数据表
 		try {
 			if (mainMapper.saveGoodsInfo(goods) >= 1) {
-				map.put("save_state", "成功添加一条商品信息");
-				return ResultMap.success("请求成功", map);
+				return ResultMap.success("成功添加一条商品信息", null);
 			}
 		} catch (SQLException e) {
 			return ResultMap.failure("1001", "添加失败啦，请稍后再试");
@@ -51,9 +48,27 @@ public class MainServiceImpl implements IMainService {
 	@Override
 	public ResultMap listGoodsInfo() {
 		try {
-			mainMapper.listGoodsInfo();
-		} catch (SQLException e){
+			List<Goods> goodsList = mainMapper.listGoodsInfo();
+			return ResultMap.success("请求成功", goodsList);
+		} catch (SQLException e) {
+			return ResultMap.failure("1001", "拉取商品信息出错啦，请稍后再试");
+		}
+	}
 
+	/**
+	 * 上架指定商品ID的商品
+	 *
+	 * @param goodsId 商品ID
+	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
+	 */
+	@Override
+	public ResultMap updateGoodsStateById(String goodsId) {
+		try {
+			if (mainMapper.updateGoodsStateById(goodsId) >= 1) {
+				return ResultMap.success("已变更为在架状态", null);
+			}
+		} catch (SQLException e) {
+			return ResultMap.failure("1002", "状态变更失败，请稍后再试");
 		}
 		return null;
 	}

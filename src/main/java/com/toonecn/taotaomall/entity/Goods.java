@@ -70,6 +70,22 @@ public class Goods {
 	public Goods() {
 	}
 
+	/**
+	 * 添加商品
+	 *
+	 * @param goodsId          商品ID
+	 * @param goodsName        商品名
+	 * @param goodsType        商品类型
+	 * @param goodsCost        商品成本价
+	 * @param goodsPrice       商品销售价
+	 * @param goodsMedia       商品图片地址
+	 * @param goodsMediaWidth  商品图片宽度
+	 * @param goodsMediaHeight 商品图片高度
+	 * @param goodsDescription 商品描述
+	 * @param goodsIsPutaway   商品是否在架
+	 * @param goodsStorage     商品库存量
+	 * @param goodsSalesVolume 商品销售量
+	 */
 	public Goods(String goodsId, String goodsName, int goodsType, BigDecimal goodsCost, BigDecimal goodsPrice, String goodsMedia, double goodsMediaWidth, double goodsMediaHeight, String goodsDescription, boolean goodsIsPutaway, int goodsStorage, int goodsSalesVolume) {
 		this.goodsId = goodsId;
 		this.goodsName = goodsName;
@@ -83,6 +99,39 @@ public class Goods {
 		this.goodsIsPutaway = goodsIsPutaway;
 		this.goodsStorage = goodsStorage;
 		this.goodsSalesVolume = goodsSalesVolume;
+	}
+
+	/**
+	 * 获取商品信息
+	 *
+	 * @param goodsId          商品ID
+	 * @param goodsName        商品名
+	 * @param goodsType        商品类型
+	 * @param goodsCost        商品成本价
+	 * @param goodsPrice       商品销售价
+	 * @param goodsMedia       商品图片地址
+	 * @param goodsMediaWidth  商品图片宽度
+	 * @param goodsMediaHeight 商品图片高度
+	 * @param goodsDescription 商品描述
+	 * @param goodsIsPutaway   商品是否在架
+	 * @param goodsStorage     商品库存量
+	 * @param goodsSalesVolume 商品销售量
+	 * @param goodsAddTime     商品信息创建时间
+	 */
+	public Goods(String goodsId, String goodsName, int goodsType, BigDecimal goodsCost, BigDecimal goodsPrice, String goodsMedia, double goodsMediaWidth, double goodsMediaHeight, String goodsDescription, boolean goodsIsPutaway, int goodsStorage, int goodsSalesVolume, Timestamp goodsAddTime) {
+		this.goodsId = goodsId;
+		this.goodsName = goodsName;
+		this.goodsType = goodsType;
+		this.goodsCost = goodsCost;
+		this.goodsPrice = goodsPrice;
+		this.goodsMedia = goodsMedia;
+		this.goodsMediaWidth = goodsMediaWidth;
+		this.goodsMediaHeight = goodsMediaHeight;
+		this.goodsDescription = goodsDescription;
+		this.goodsIsPutaway = goodsIsPutaway;
+		this.goodsStorage = goodsStorage;
+		this.goodsSalesVolume = goodsSalesVolume;
+		this.goodsAddTime = goodsAddTime;
 	}
 
 	/**

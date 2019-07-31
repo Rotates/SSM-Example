@@ -21,4 +21,12 @@ public interface IMainService {
 	 * @return 包含所有商品信息在内的接口统一返回格式
 	 */
 	ResultMap listGoodsInfo();
+
+	/**
+	 * 上架指定商品ID的商品
+	 *
+	 * @param goodsId 商品ID
+	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
+	 */
+	ResultMap updateGoodsStateById(String goodsId);
 }

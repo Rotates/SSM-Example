@@ -5,9 +5,7 @@ import com.toonecn.taotaomall.entity.ResultMap;
 import com.toonecn.taotaomall.service.IMainService;
 import com.toonecn.taotaomall.utils.UUIDUtil;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -43,7 +41,7 @@ public class MainController {
 	 * @param goodsSalesVolume 销售量
 	 * @return 成功添加否
 	 */
-	@RequestMapping("/savegoodsinfo")
+	@RequestMapping("/savegoods")
 	@ResponseBody
 	public ResultMap saveGoodsInfo(@RequestParam(value = "goods_name") String goodsName,
 	                               @RequestParam(value = "goods_type") int goodsType,
@@ -71,8 +69,21 @@ public class MainController {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return ResultMap.failure("1001", "请稍后再试");
+			return ResultMap.failure("1001", "添加失败啦，请稍后再试");
 		}
+		return null;
+	}
+
+	/**
+	 * 获取某指定ID商品的信息
+	 *
+	 * @param goodsId 商品ID
+	 * @return 匹配的结果
+	 */
+	@RequestMapping("/goods/{goodsId}")
+	@ResponseBody
+	public ResultMap getGoodsInfo(@PathVariable String goodsId) {
+
 		return null;
 	}
 

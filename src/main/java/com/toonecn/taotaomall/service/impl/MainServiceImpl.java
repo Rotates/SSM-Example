@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import java.sql.SQLException;
 import java.util.List;
 
+
 /**
  * @author yang
  */
@@ -32,7 +33,7 @@ public class MainServiceImpl implements IMainService {
 		// 如果影响记录数大于等于1，即商品信息成功插入数据表
 		try {
 			if (mainMapper.saveGoodsInfo(goods) >= 1) {
-				return ResultMap.success("成功添加一条商品信息", null);
+				return ResultMap.success("成功添加一条商品信息");
 			}
 		} catch (SQLException e) {
 			return ResultMap.failure("1001", "添加失败啦，请稍后再试");
@@ -49,7 +50,7 @@ public class MainServiceImpl implements IMainService {
 	public ResultMap listGoodsInfo() {
 		try {
 			List<Goods> goodsList = mainMapper.listGoodsInfo();
-			return ResultMap.success("请求成功", goodsList);
+			return ResultMap.success("请求成功").addData("goodsList", goodsList);
 		} catch (SQLException e) {
 			return ResultMap.failure("1001", "拉取商品信息出错啦，请稍后再试");
 		}
@@ -62,14 +63,34 @@ public class MainServiceImpl implements IMainService {
 	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
 	 */
 	@Override
-	public ResultMap updateGoodsStateById(String goodsId) {
+	public ResultMap updateGoodsPutawayById(String goodsId) {
 		try {
-			if (mainMapper.updateGoodsStateById(goodsId) >= 1) {
-				return ResultMap.success("已变更为在架状态", null);
+			if (mainMapper.updateGoodsPutawayById(goodsId) >= 1) {
+				return ResultMap.success("已变更为在架状态");
+			} else {
+				return ResultMap.failure("1002", "未找到对应商品ID的信息");
 			}
 		} catch (SQLException e) {
-			return ResultMap.failure("1002", "状态变更失败，请稍后再试");
+			return ResultMap.failure("1003", "状态变更失败，请稍后再试");
 		}
-		return null;
+	}
+
+	/**
+	 * 下架指定商品ID的商品
+	 *
+	 * @param goodsId 商品ID
+	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
+	 */
+	@Override
+	public ResultMap updateGoodsSoldoutById(String goodsId) {
+		try {
+			if (mainMapper.updateGoodsSoldoutById(goodsId) >= 1) {
+				return ResultMap.success("已变更为下架状态");
+			} else {
+				return ResultMap.failure("1002", "未找到对应商品ID的信息");
+			}
+		} catch (SQLException e) {
+			return ResultMap.failure("1003", "状态变更失败，请稍后再试");
+		}
 	}
 }

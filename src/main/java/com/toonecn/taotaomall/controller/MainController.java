@@ -79,7 +79,21 @@ public class MainController {
 	 */
 	@RequestMapping(value = "/goods/putaway/{goods_id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public ResultMap updateGoodsStateById(@PathVariable("goods_id") String goodsId) {
-		return iMainService.updateGoodsStateById(goodsId);
+	public ResultMap updateGoodsPutawayById(@PathVariable("goods_id") String goodsId) {
+		return iMainService.updateGoodsPutawayById(goodsId);
 	}
+
+	/**
+	 * 下架指定商品ID的商品
+	 *
+	 * @param goodsId 商品ID
+	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
+	 */
+	@RequestMapping(value = "/goods/soldout/{goods_id}", method = RequestMethod.PUT)
+	@ResponseBody
+	public ResultMap updateGoodsSoldoutById(@PathVariable("goods_id") String goodsId) {
+		return iMainService.updateGoodsSoldoutById(goodsId);
+	}
+
+
 }

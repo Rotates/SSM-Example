@@ -3,6 +3,7 @@ package com.toonecn.taotaomall.service;
 import com.toonecn.taotaomall.entity.Goods;
 import com.toonecn.taotaomall.entity.ResultMap;
 
+
 /**
  * @author yang
  */
@@ -28,5 +29,13 @@ public interface IMainService {
 	 * @param goodsId 商品ID
 	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
 	 */
-	ResultMap updateGoodsStateById(String goodsId);
+	ResultMap updateGoodsPutawayById(String goodsId);
+
+	/**
+	 * 下架指定商品ID的商品
+	 *
+	 * @param goodsId 商品ID
+	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
+	 */
+	ResultMap updateGoodsSoldoutById(String goodsId);
 }

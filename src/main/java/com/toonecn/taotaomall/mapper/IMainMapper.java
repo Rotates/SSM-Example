@@ -36,5 +36,14 @@ public interface IMainMapper {
 	 * @return 语句影响的记录数
 	 * @throws SQLException 状态信息变更失败
 	 */
-	int updateGoodsStateById(@Param("goodsId") String goodsId) throws SQLException;
+	int updateGoodsPutawayById(@Param("goodsId") String goodsId) throws SQLException;
+
+	/**
+	 * 下架指定商品ID的商品
+	 *
+	 * @param goodsId 商品ID
+	 * @return 包含指定商品在架状态信息在内的接口统一返回格式
+	 * @throws SQLException 状态信息变更失败
+	 */
+	int updateGoodsSoldoutById(@Param("goodsId") String goodsId) throws SQLException;
 }

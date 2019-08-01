@@ -65,9 +65,16 @@
     </insert>
 
     <!-- 更改商品在架状态信息 -->
-    <update id="updateGoodsStateById" parameterType="string">
+    <update id="updateGoodsPutawayById" parameterType="string">
         UPDATE goods
         SET goods_isputaway = TRUE
+        WHERE goods_id = #{goodsId}
+    </update>
+
+    <!-- 更改商品下架状态信息 -->
+    <update id="updateGoodsSoldoutById" parameterType="string">
+        UPDATE goods
+        SET goods_isputaway = FALSE
         WHERE goods_id = #{goodsId}
     </update>
 

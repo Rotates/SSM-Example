@@ -1,6 +1,8 @@
 package com.toonecn.taotaomall.entity;
 
 import javax.persistence.Entity;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 返回数据的结构
@@ -11,7 +13,7 @@ import javax.persistence.Entity;
 public class ResultMap {
 	private String code;
 	private String msg;
-	private Object data;
+	private Map<String, Object> data = new HashMap<>();
 
 	/**
 	 * 构造函数
@@ -19,7 +21,7 @@ public class ResultMap {
 	public ResultMap() {
 	}
 
-	public ResultMap(String code, String msg, Object data) {
+	public ResultMap(String code, String msg, Map<String, Object> data) {
 		this.code = code;
 		this.msg = msg;
 		this.data = data;
@@ -28,11 +30,10 @@ public class ResultMap {
 	/**
 	 * 成功方法
 	 */
-	public static ResultMap success(String msg, Object data) {
+	public static ResultMap success(String msg) {
 		ResultMap resultMap = new ResultMap();
 		resultMap.setCode("0");
 		resultMap.setMsg(msg);
-		resultMap.setData(data);
 		return resultMap;
 	}
 
@@ -43,8 +44,15 @@ public class ResultMap {
 		ResultMap resultMap = new ResultMap();
 		resultMap.setCode(code);
 		resultMap.setMsg(msg);
-		resultMap.setData(null);
 		return resultMap;
+	}
+
+	/**
+	 * data内容填充
+	 */
+	public ResultMap addData(String key, Object data) {
+		this.getData().put(key, data);
+		return this;
 	}
 
 	/**
@@ -58,7 +66,7 @@ public class ResultMap {
 		return msg;
 	}
 
-	public Object getData() {
+	public Map<String, Object> getData() {
 		return data;
 	}
 
@@ -73,7 +81,7 @@ public class ResultMap {
 		this.msg = msg;
 	}
 
-	private void setData(Object data) {
+	public void setData(Map<String, Object> data) {
 		this.data = data;
 	}
 }
